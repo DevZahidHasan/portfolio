@@ -14,11 +14,11 @@ function ProjectsCard() {
         className="flex-center"
         style={{ flexGrow: 1, width: '100%', marginBottom: '1.5rem' }}
       >
-        <img
-          src="/project.png"
-          alt="Projects Showcase"
-          style={{ width: '100%', height: '140px', borderRadius: '16px', objectFit: 'cover', objectPosition: 'top' }}
-        />
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" style={{ opacity: 0.5 }}>
+          <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+          <line x1="8" y1="21" x2="16" y2="21"></line>
+          <line x1="12" y1="17" x2="12" y2="21"></line>
+        </svg>
       </div>
       
       <div className="flex-between" style={{ width: '100%', alignItems: 'flex-end' }}>
