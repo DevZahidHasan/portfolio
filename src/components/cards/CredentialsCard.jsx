@@ -1,14 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { useNavigate } from 'react-router';
 import IconButton from '../ui/IconButton';
 
 function CredentialsCard() {
+  const navigate = useNavigate();
   return (
-    <div className="card flex-between" style={{ flexDirection: 'column', alignItems: 'flex-start' }}>
-      <div style={{ flexGrow: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', marginBottom: '1rem' }}>
-        {/* Placeholder for Signature */}
-        <svg width="150" height="60" viewBox="0 0 150 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M10 40C30 20 50 50 70 30C90 10 110 50 140 20" stroke="var(--text-secondary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    <div className="card flex-between" style={{ flexDirection: 'column', alignItems: 'flex-start', cursor: 'pointer' }} onClick={() => navigate('/credentials')}>
+      <div className="flex-center" style={{ flexGrow: 1, width: '100%', marginBottom: '1.5rem' }}>
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" style={{ opacity: 0.5 }}>
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
         </svg>
       </div>
       
@@ -17,9 +17,7 @@ function CredentialsCard() {
           <p className="text-sm" style={{ marginBottom: '0.25rem' }}>MORE ABOUT ME</p>
           <h3 className="text-lg">Credentials</h3>
         </div>
-        <Link to="/credentials">
-          <IconButton />
-        </Link>
+        <IconButton />
       </div>
     </div>
   );

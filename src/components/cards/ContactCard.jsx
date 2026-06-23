@@ -1,10 +1,12 @@
 import React from 'react';
+import { useNavigate } from 'react-router';
 import './ContactCard.css';
 import IconButton from '../ui/IconButton';
 
 function ContactCard() {
+  const navigate = useNavigate();
   return (
-    <div className="contact-card card flex-between">
+    <div className="contact-card card flex-between" style={{ cursor: 'pointer' }} onClick={() => navigate('/contact')}>
       <div>
         <h2 className="contact-title">
           Let's<br/>

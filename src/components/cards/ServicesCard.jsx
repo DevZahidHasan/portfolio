@@ -1,9 +1,11 @@
 import React from 'react';
+import { useNavigate } from 'react-router';
 import IconButton from '../ui/IconButton';
 
 function ServicesCard() {
+  const navigate = useNavigate();
   return (
-    <div className="card flex-between" style={{ flexDirection: 'column', alignItems: 'flex-start' }}>
+    <div className="card flex-between" style={{ flexDirection: 'column', alignItems: 'flex-start', cursor: 'pointer' }} onClick={() => navigate('/services')}>
       <div className="flex-center" style={{ gap: '2rem', flexGrow: 1, width: '100%', marginBottom: '1rem' }}>
         {/* Icons */}
         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><rect x="3" y="8" width="18" height="12" rx="2" ry="2"></rect><path d="M16 8v-2a2 2 0 0 0-2-2H10a2 2 0 0 0-2 2v2"></path><circle cx="12" cy="14" r="3"></circle></svg>

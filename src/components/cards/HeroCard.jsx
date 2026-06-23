@@ -1,11 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { useNavigate } from 'react-router';
 import './HeroCard.css';
 import IconButton from '../ui/IconButton';
 
 function HeroCard() {
+  const navigate = useNavigate();
+  
   return (
-    <div className="hero-card">
+    <div className="hero-card" onClick={() => navigate('/about')} style={{ cursor: 'pointer' }}>
       <div className="hero-img-container">
         <img src="/main.jpg" alt="Zahid Hasan" className="hero-img" />
       </div>
@@ -17,9 +19,7 @@ function HeroCard() {
       </div>
       
       <div className="hero-action">
-        <Link to="/about">
-          <IconButton />
-        </Link>
+        <IconButton />
       </div>
     </div>
   );

@@ -1,0 +1,143 @@
+.services-page {
+  width: 100%;
+}
+
+.srv-layout {
+  display: flex;
+  gap: 4rem;
+  align-items: flex-start;
+}
+
+/* Sidebar Styling */
+.srv-sidebar {
+  flex: 0 0 320px;
+  position: sticky;
+  top: 6rem;
+}
+
+.srv-menu-card {
+  padding: 2.5rem 0;
+}
+
+.srv-menu-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.srv-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border-left: 2px solid transparent;
+}
+
+.srv-menu-item:hover,
+.srv-menu-item:first-child {
+  color: var(--text-primary);
+  background-color: rgba(255, 255, 255, 0.02);
+  border-left: 2px solid var(--text-primary);
+}
+
+.srv-menu-item svg {
+  color: var(--text-secondary);
+  transition: all 0.3s ease;
+}
+
+.srv-menu-item:hover svg,
+.srv-menu-item:first-child svg {
+  color: var(--text-primary);
+}
+
+/* Main Content Styling */
+.srv-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.srv-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+  margin-top: 1rem;
+}
+
+.srv-header .title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.header-star {
+  color: var(--text-secondary);
+  opacity: 0.5;
+}
+
+.srv-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.srv-card {
+  padding: 3rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.srv-card-title {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.srv-card-desc {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  opacity: 0.9;
+}
+
+@media (max-width: 1024px) {
+  .srv-layout {
+    flex-direction: column;
+    gap: 3rem;
+  }
+  
+  .srv-sidebar {
+    position: static;
+    flex: none;
+    width: 100%;
+  }
+
+  .srv-menu-card {
+    padding: 1.5rem 0;
+  }
+
+  .srv-header .title {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .srv-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .srv-header .title {
+    font-size: 2rem;
+  }
+}
