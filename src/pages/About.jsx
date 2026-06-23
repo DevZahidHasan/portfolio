@@ -1,4 +1,6 @@
 import React from 'react';
+import { motion } from 'framer-motion';
+import { pageVariants, pageTransition } from '../utils/animations';
 import './About.css';
 import AboutImageCard from '../components/cards/AboutImageCard';
 import SummaryCard from '../components/cards/SummaryCard';
@@ -7,42 +9,58 @@ import EducationCard from '../components/cards/EducationCard';
 import ProfilesCard from '../components/cards/ProfilesCard';
 import ContactCard from '../components/cards/ContactCard';
 import CredentialsCard from '../components/cards/CredentialsCard';
+import ScrollReveal from '../components/ui/ScrollReveal';
 
 function About() {
   return (
-    <div className="about-page">
+    <motion.div 
+      className="about-page"
+      initial="initial"
+      animate="in"
+      exit="out"
+      variants={pageVariants}
+      transition={pageTransition}
+    >
       <div className="about-grid">
         
         {/* Row 1 */}
         <div className="about-row-1">
-          <div className="about-img-container">
+          <ScrollReveal className="about-img-container" delay={0.1}>
             <AboutImageCard />
-          </div>
-          <div className="about-summary-container">
+          </ScrollReveal>
+          <ScrollReveal className="about-summary-container" delay={0.2}>
             <SummaryCard />
-          </div>
+          </ScrollReveal>
         </div>
 
         {/* Row 2 */}
         <div className="about-row-2">
-          <div className="about-half">
+          <ScrollReveal className="about-experience-container" delay={0.1}>
             <ExperienceCard />
-          </div>
-          <div className="about-half">
+          </ScrollReveal>
+          <ScrollReveal className="about-education-container" delay={0.2}>
             <EducationCard />
-          </div>
+          </ScrollReveal>
         </div>
 
-        {/* Row 3 - Matches Homepage Bottom */}
-        <div className="bento-grid">
-          <div className="grid-item profiles" style={{ padding: 0 }}><ProfilesCard /></div>
-          <div className="grid-item contact" style={{ padding: 0 }}><ContactCard /></div>
-          <div className="grid-item credentials" style={{ padding: 0 }}><CredentialsCard /></div>
+        {/* Row 3 - Profiles, Contact, Credentials */}
+        <div className="about-row-1">
+          <ScrollReveal className="about-profiles-container" delay={0.1}>
+            <ProfilesCard />
+          </ScrollReveal>
+          <ScrollReveal className="about-contact-container" delay={0.2}>
+            <ContactCard />
+          </ScrollReveal>
+          <ScrollReveal className="about-credentials-container" delay={0.3}>
+            <CredentialsCard />
+          </ScrollReveal>
         </div>
 
       </div>
-    </div>
+    </motion.div>
   );
 }
 
 export default About;
+
+// Forced HMR reload

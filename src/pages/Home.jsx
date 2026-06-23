@@ -1,11 +1,20 @@
 import React from 'react';
+import { motion } from 'framer-motion';
+import { pageVariants, pageTransition } from '../utils/animations';
 import GridContainer from '../components/GridContainer';
 
 function Home() {
   return (
-    <div className="home-page">
+    <motion.div 
+      className="home-page"
+      initial="initial"
+      animate="in"
+      exit="out"
+      variants={pageVariants}
+      transition={pageTransition}
+    >
       <GridContainer />
-    </div>
+    </motion.div>
   );
 }
 

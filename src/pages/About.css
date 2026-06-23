@@ -28,6 +28,10 @@
   display: flex;
   gap: 1.5rem;
 }
+.about-row-3 {
+  display: flex;
+  gap: 1.5rem;
+}
 
 .about-half {
   flex: 1;

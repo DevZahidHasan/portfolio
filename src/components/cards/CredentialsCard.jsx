@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 import IconButton from '../ui/IconButton';
 
 function CredentialsCard() {
@@ -11,12 +12,14 @@ function CredentialsCard() {
         </svg>
       </div>
       
-      <div className="flex-between" style={{ width: '100%', alignItems: 'flex-end' }}>
+      <div className="flex-between" style={{ alignItems: 'flex-end', width: '100%' }}>
         <div>
-          <p className="text-sm">MORE ABOUT ME</p>
-          <h2 className="text-lg">Credentials</h2>
+          <p className="text-sm" style={{ marginBottom: '0.25rem' }}>MORE ABOUT ME</p>
+          <h3 className="text-lg">Credentials</h3>
         </div>
-        <IconButton />
+        <Link to="/credentials">
+          <IconButton />
+        </Link>
       </div>
     </div>
   );

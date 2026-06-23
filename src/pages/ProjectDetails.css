@@ -1,0 +1,205 @@
+.project-details-page {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding-bottom: 3rem;
+}
+
+.pd-header {
+  text-align: left;
+}
+
+.pd-banner {
+  width: 100%;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  background-color: var(--card-bg-hover);
+}
+
+.pd-banner img {
+  width: 100%;
+  height: auto;
+  max-height: 600px;
+  object-fit: cover;
+  display: block;
+}
+
+.pd-text-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.pd-image-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.pd-grid-item {
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  background-color: var(--card-bg-hover);
+  aspect-ratio: 1 / 1;
+}
+
+.pd-grid-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pd-specs-card {
+  display: flex;
+  gap: 3rem;
+  padding: 3rem;
+}
+
+.specs-list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  padding-right: 2rem;
+}
+
+.spec-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.spec-label {
+  opacity: 0.5;
+}
+
+.spec-value {
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.specs-description {
+  flex: 3;
+}
+
+.pd-next-action {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.next-btn {
+  padding: 1.5rem 3rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  color: var(--text-primary);
+  border-radius: 40px;
+}
+
+.next-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* Hover Overlays & Modal */
+.pd-image-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.pd-hover-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+}
+
+.pd-image-container:hover .pd-hover-overlay {
+  opacity: 1;
+}
+
+.pd-view-btn {
+  padding: 0.75rem 2rem;
+  background-color: var(--text-primary);
+  color: var(--bg-primary);
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transform: translateY(20px);
+  transition: transform 0.3s ease;
+}
+
+.pd-image-container:hover .pd-view-btn {
+  transform: translateY(0);
+}
+
+.pd-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(10, 10, 10, 0.95);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.pd-modal-close-btn {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  z-index: 10000;
+}
+
+.pd-modal-close-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.pd-modal-image {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+}
+
+@media (max-width: 768px) {
+  .pd-text-split,
+  .pd-image-grid,
+  .pd-specs-card {
+    grid-template-columns: 1fr;
+    flex-direction: column;
+  }
+  
+  .specs-list {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-right: 0;
+    padding-bottom: 2rem;
+  }
+}
