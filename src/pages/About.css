@@ -1,0 +1,43 @@
+.about-page {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.about-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.about-row-1 {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.about-img-container {
+  flex: 1;
+  max-width: 350px;
+}
+
+.about-summary-container {
+  flex: 2;
+}
+
+.about-row-2 {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.about-half {
+  flex: 1;
+}
+
+@media (max-width: 1024px) {
+  .about-row-1, .about-row-2 {
+    flex-direction: column;
+  }
+  .about-img-container {
+    max-width: 100%;
+  }
+}

@@ -1,0 +1,23 @@
+.contact-card {
+  align-items: flex-end;
+  padding: 3rem 2rem;
+}
+
+.contact-title {
+  font-size: 3.5rem;
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -1px;
+}
+
+.contact-title span {
+  color: var(--text-accent);
+}
+
+.sparkle {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: var(--text-secondary);
+  opacity: 0.3;
+}
