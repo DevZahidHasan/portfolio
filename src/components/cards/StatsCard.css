@@ -21,8 +21,22 @@
   line-height: 1.4;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1024px) {
   .stats-card {
-    flex-direction: column;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  
+  .stat-item {
+    padding: 1.5rem 1rem;
+  }
+  
+  .stat-item .title {
+    font-size: 2rem;
+  }
+  
+  .stat-item:nth-child(3) {
+    grid-column: span 2;
   }
 }

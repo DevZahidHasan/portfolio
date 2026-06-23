@@ -17,7 +17,7 @@ function ProjectsCard() {
         <img
           src="/project.png"
           alt="Projects Showcase"
-          style={{ width: '100%', borderRadius: '16px', objectFit: 'cover' }}
+          style={{ width: '100%', height: '140px', borderRadius: '16px', objectFit: 'cover', objectPosition: 'top' }}
         />
       </div>
       

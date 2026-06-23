@@ -38,5 +38,44 @@
 }
 
 .talk-btn:hover {
-  background-color: #333336; /* slightly lighter for hover */
+  background-color: #333336;
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+  color: var(--text-primary);
+}
+
+@media (max-width: 1024px) {
+  .header {
+    position: relative;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    z-index: 100;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  
+  .nav-links.mobile-open {
+    display: flex;
+  }
+  
+  .talk-btn {
+    display: none;
+  }
+  
+  .hamburger {
+    display: block;
+  }
 }

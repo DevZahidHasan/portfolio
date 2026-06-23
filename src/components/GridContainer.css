@@ -11,6 +11,7 @@
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
+  min-width: 0; /* Prevents grid blowout from unbroken text like Marquee */
 }
 
 /* Grid layout positioning */
@@ -57,28 +58,11 @@
 /* Responsive adjustments */
 @media (max-width: 1024px) {
   .bento-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  
-  .marquee, .stats, .contact {
-    grid-column: span 3;
-  }
-  
-  .services {
-    grid-column: span 2;
-  }
-  
-  .profiles {
-    grid-column: span 1;
-  }
-}
-
-@media (max-width: 768px) {
-  .bento-grid {
     grid-template-columns: repeat(1, 1fr);
   }
   
   .grid-item {
     grid-column: span 1 !important;
+    grid-row: auto !important;
   }
 }
