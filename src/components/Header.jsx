@@ -14,7 +14,7 @@ function Header() {
       <nav className="nav-links">
         <Link to="/" className={location.pathname === '/' ? 'active' : ''}>Home</Link>
         <Link to="/about" className={location.pathname === '/about' ? 'active' : ''}>About</Link>
-        <a href="#works">Works</a>
+        <Link to="/works" className={location.pathname === '/works' ? 'active' : ''}>Works</Link>
         <a href="#contact">Contact</a>
       </nav>
       
