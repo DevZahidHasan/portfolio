@@ -18,8 +18,10 @@ function Header() {
         <Link to="/works" className={location.pathname === '/works' ? 'active' : ''} onClick={() => setIsMenuOpen(false)}>Works</Link>
         <Link to="/contact" className={location.pathname === '/contact' ? 'active' : ''} onClick={() => setIsMenuOpen(false)}>Contact</Link>
       </nav>
+      <Link to="/contact">
+        <button className="talk-btn">Let's talk</button>
+      </Link>
       
-      <button className="talk-btn">Let's talk</button>
 
       <div className="hamburger" onClick={() => setIsMenuOpen(!isMenuOpen)}>
         <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
