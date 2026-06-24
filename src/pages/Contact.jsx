@@ -1,10 +1,13 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { pageVariants, pageTransition } from '../utils/animations';
 import ScrollReveal from '../components/ui/ScrollReveal';
 import './Contact.css';
 
 function Contact() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
+
   return (
     <motion.div 
       className="contact-page"
@@ -80,24 +83,97 @@ function Contact() {
             </svg>
           </div>
           
-          <form className="contact-form" onSubmit={(e) => e.preventDefault()}>
+          <form className="contact-form" onSubmit={async (e) => {
+            e.preventDefault();
+            setIsSubmitting(true);
+            const formData = new FormData(e.target);
+            formData.append("access_key", "388c09cb-16fa-4690-b46a-3a0150abbf70");
+
+            const object = Object.fromEntries(formData);
+            const json = JSON.stringify(object);
+
+            try {
+              const res = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                  Accept: "application/json"
+                },
+                body: json
+              }).then((res) => res.json());
+
+              if (res.success) {
+                setShowSuccessModal(true);
+                e.target.reset();
+              } else {
+                alert("Failed to send message. Please try again later.");
+              }
+            } catch (error) {
+              alert("An error occurred. Please try again.");
+            } finally {
+              setIsSubmitting(false);
+            }
+          }}>
             <div className="form-group">
-              <input type="text" placeholder="Name *" required />
+              <input type="text" name="name" placeholder="Name *" required />
             </div>
             <div className="form-group">
-              <input type="email" placeholder="Email *" required />
+              <input type="email" name="email" placeholder="Email *" required />
             </div>
             <div className="form-group">
-              <input type="text" placeholder="Your Subject *" required />
+              <input type="text" name="subject" placeholder="Your Subject *" required />
             </div>
             <div className="form-group">
-              <textarea placeholder="Your Message *" rows="6" required></textarea>
+              <textarea name="message" placeholder="Your Message *" rows="6" required></textarea>
             </div>
-            <button type="submit" className="submit-btn">Send Message</button>
+            <button type="submit" className="submit-btn" disabled={isSubmitting} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '0.5rem' }}>
+              {isSubmitting ? (
+                <>
+                  <svg className="spinner" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M21 12a9 9 0 1 1-6.219-8.56"></path>
+                  </svg>
+                  Sending...
+                </>
+              ) : (
+                'Send Message'
+              )}
+            </button>
           </form>
         </ScrollReveal>
         
       </div>
+
+      {/* Success Modal */}
+      <AnimatePresence>
+        {showSuccessModal && (
+          <motion.div 
+            className="contact-modal-overlay"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setShowSuccessModal(false)}
+          >
+            <motion.div 
+              className="contact-modal"
+              initial={{ scale: 0.9, opacity: 0, y: 20 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.9, opacity: 0, y: 20 }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="contact-modal-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+              </div>
+              <h2>Message Sent!</h2>
+              <p>Thank you for reaching out. I have received your message and will get back to you shortly.</p>
+              <button className="submit-btn" onClick={() => setShowSuccessModal(false)}>Close</button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
     </motion.div>
   );
 }
