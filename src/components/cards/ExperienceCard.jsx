@@ -10,7 +10,7 @@ function ExperienceCard() {
           <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', marginBottom: '0.5rem' }}>Aug 2024 - Present</p>
           <h4 style={{ fontSize: '1.25rem', marginBottom: '0.25rem' }}>Junior Software Engineer</h4>
           <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>ImplevistaBD</p>
-          <p style={{ color: 'var(--text-secondary)', fontSize: '0.85rem', marginTop: '0.5rem' }}>Projects: BOG PRO (Holcim Limited), Banking ERP (CCULB)</p>
+          <p style={{ color: 'var(--text-secondary)', fontSize: '0.85rem', marginTop: '0.5rem' }}>Projects: BOG PRO (Holcim Limited), Core Banking Software - CBS (CCULB)</p>
         </div>
         
         <div className="timeline-item">

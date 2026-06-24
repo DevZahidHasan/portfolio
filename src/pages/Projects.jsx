@@ -45,7 +45,7 @@ function Projects() {
         <ScrollReveal className="proj-square-1" delay={0.3}>
           <ProjectCard 
             id="banking-erp"
-            title="Banking ERP" 
+            title="CCULB - Core Banking Software (CBS)" 
             category="FINTECH PLATFORM" 
             isTall={false} 
             imageSrc="/cculb/main.png"
