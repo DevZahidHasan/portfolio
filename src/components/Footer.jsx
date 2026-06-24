@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import "./Footer.css";
-import { Link } from "react-router";
+import { Link, useLocation } from "react-router";
 
 function Footer() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
   return (
     <footer className="footer">
       <div className="footer-logo">
