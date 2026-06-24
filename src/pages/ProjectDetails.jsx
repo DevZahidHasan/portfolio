@@ -121,9 +121,17 @@ function ProjectDetails() {
             <p style={{ color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: '1.5rem' }}>
               {about}
             </p>
-            <p style={{ color: 'var(--text-secondary)', lineHeight: 1.6 }}>
+            <p style={{ color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: '1.5rem' }}>
               {approach}
             </p>
+            {project.technologies && (
+              <>
+                <h3 className="text-sm" style={{ marginBottom: '1rem', marginTop: '2rem' }}>TECHNOLOGIES</h3>
+                <p style={{ color: 'var(--text-secondary)', lineHeight: 1.6, fontWeight: 500 }}>
+                  {project.technologies}
+                </p>
+              </>
+            )}
           </div>
         </ScrollReveal>
 

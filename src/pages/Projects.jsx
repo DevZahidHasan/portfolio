@@ -48,6 +48,7 @@ function Projects() {
             title="Banking ERP" 
             category="FINTECH PLATFORM" 
             isTall={false} 
+            imageSrc="/cculb/main.png"
           />
         </ScrollReveal>
 

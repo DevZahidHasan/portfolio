@@ -8,6 +8,7 @@ import ServicesCard from './cards/ServicesCard';
 import ProfilesCard from './cards/ProfilesCard';
 import StatsCard from './cards/StatsCard';
 import ContactCard from './cards/ContactCard';
+import ResumeCard from './cards/ResumeCard';
 import ScrollReveal from './ui/ScrollReveal';
 
 function GridContainer() {
@@ -24,6 +25,9 @@ function GridContainer() {
       </ScrollReveal>
       <ScrollReveal className="grid-item projects" style={{ padding: 0 }} delay={0.4}>
         <ProjectsCard />
+      </ScrollReveal>
+      <ScrollReveal className="grid-item resume" style={{ padding: 0 }} delay={0.1}>
+        <ResumeCard />
       </ScrollReveal>
       <ScrollReveal className="grid-item services" style={{ padding: 0 }} delay={0.2}>
         <ServicesCard />
