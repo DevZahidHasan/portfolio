@@ -16,7 +16,7 @@ function Footer() {
       </nav>
       
       <div className="copyright">
-        &copy; All rights reserved by <span>WordPressRiver</span>
+        &copy; All rights reserved by <span>Zahid Hasan</span>
       </div>
     </footer>
   );
