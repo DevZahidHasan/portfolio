@@ -5,7 +5,7 @@ function Footer() {
   return (
     <footer className="footer">
       <div className="footer-logo">
-        <a href="/">Zahid<span>Hasan</span></a>
+        <a href="/">Zahid<span> Hasan</span></a>
       </div>
       
       <nav className="footer-nav">

@@ -9,7 +9,7 @@ function Header() {
   return (
     <header className="header flex-between">
       <div className="logo">
-        <Link to="/">Zahid<span>Hasan</span></Link>
+        <Link to="/">Zahid<span> Hasan</span></Link>
       </div>
       
       <nav className={`nav-links ${isMenuOpen ? 'mobile-open' : ''}`}>
