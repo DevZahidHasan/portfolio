@@ -12,7 +12,7 @@ function Header() {
         <Link to="/">Zahid<span> Hasan</span></Link>
       </div>
       
-      <nav className={`nav-links ${isMenuOpen ? 'mobile-open' : ''}`}>
+      <nav className={`header-nav ${isMenuOpen ? 'mobile-open' : ''}`}>
         <Link to="/" className={location.pathname === '/' ? 'active' : ''} onClick={() => setIsMenuOpen(false)}>Home</Link>
         <Link to="/about" className={location.pathname === '/about' ? 'active' : ''} onClick={() => setIsMenuOpen(false)}>About</Link>
         <Link to="/works" className={location.pathname === '/works' ? 'active' : ''} onClick={() => setIsMenuOpen(false)}>Works</Link>

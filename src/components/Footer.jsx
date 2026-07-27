@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Footer.css";
 import { Link, useLocation } from "react-router";
 
 function Footer() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
   return (
     <footer className="footer">
@@ -13,32 +12,28 @@ function Footer() {
         </a>
       </div>
 
-      <nav className={`nav-links ${isMenuOpen ? "mobile-open" : ""}`}>
+      <nav className="footer-nav">
         <Link
           to="/"
           className={location.pathname === "/" ? "active" : ""}
-          onClick={() => setIsMenuOpen(false)}
         >
           Home
         </Link>
         <Link
           to="/about"
           className={location.pathname === "/about" ? "active" : ""}
-          onClick={() => setIsMenuOpen(false)}
         >
           About
         </Link>
         <Link
           to="/works"
           className={location.pathname === "/works" ? "active" : ""}
-          onClick={() => setIsMenuOpen(false)}
         >
           Works
         </Link>
         <Link
           to="/contact"
           className={location.pathname === "/contact" ? "active" : ""}
-          onClick={() => setIsMenuOpen(false)}
         >
           Contact
         </Link>

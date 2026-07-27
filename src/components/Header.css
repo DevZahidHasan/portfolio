@@ -10,20 +10,20 @@
   letter-spacing: -0.5px;
 }
 
-.nav-links {
+.header-nav {
   display: flex;
   gap: 2.5rem;
 }
 
-.nav-links a {
+.header-nav a {
   color: var(--text-secondary);
   font-size: 1rem;
   font-weight: 500;
   transition: color var(--transition-speed) ease;
 }
 
-.nav-links a:hover,
-.nav-links a.active {
+.header-nav a:hover,
+.header-nav a.active {
   color: var(--text-primary);
 }
 
@@ -53,7 +53,7 @@
     position: relative;
   }
 
-  .nav-links {
+  .header-nav {
     display: none;
     flex-direction: column;
     position: absolute;
@@ -68,7 +68,7 @@
     border: 1px solid rgba(255, 255, 255, 0.05);
   }
   
-  .nav-links.mobile-open {
+  .header-nav.mobile-open {
     display: flex;
   }
   
