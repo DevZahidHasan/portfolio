@@ -4,8 +4,14 @@ import { pageVariants, pageTransition } from '../utils/animations';
 import './Projects.css';
 import ProjectCard from '../components/cards/ProjectCard';
 import ScrollReveal from '../components/ui/ScrollReveal';
+import { projectsData } from '../data/projects';
 
 function Projects() {
+  const firstProject = projectsData[0];
+  const secondProject = projectsData[1];
+  const thirdProject = projectsData[2];
+  const remainingProjects = projectsData.slice(3);
+
   return (
     <motion.div 
       className="projects-page"
@@ -17,16 +23,18 @@ function Projects() {
     >
       <div className="projects-grid">
         
-        {/* Tall Card on the Left */}
-        <ScrollReveal className="proj-tall" delay={0.1}>
-          <ProjectCard 
-            id="bog-pro"
-            title="BOG PRO" 
-            category="ENTERPRISE SOLUTION" 
-            isTall={true} 
-            imageSrc="/holcim/main (1).png"
-          />
-        </ScrollReveal>
+        {/* Tall Card on the Left (1st project) */}
+        {firstProject && (
+          <ScrollReveal className="proj-tall" delay={0.1}>
+            <ProjectCard 
+              id={firstProject.id}
+              title={firstProject.title} 
+              category={firstProject.category} 
+              isTall={true} 
+              imageSrc={firstProject.thumbnail}
+            />
+          </ScrollReveal>
+        )}
 
         {/* Heading spanning right two columns */}
         <ScrollReveal className="proj-heading" delay={0.2}>
@@ -41,26 +49,44 @@ function Projects() {
           </h1>
         </ScrollReveal>
 
-        {/* Two Square Cards */}
-        <ScrollReveal className="proj-square-1" delay={0.3}>
-          <ProjectCard 
-            id="banking-erp"
-            title="CCULB - Core Banking Software (CBS)" 
-            category="FINTECH PLATFORM" 
-            isTall={false} 
-            imageSrc="/cculb/main.png"
-          />
-        </ScrollReveal>
+        {/* Square Card 1 (2nd project) */}
+        {secondProject && (
+          <ScrollReveal className="proj-square-1" delay={0.3}>
+            <ProjectCard 
+              id={secondProject.id}
+              title={secondProject.title} 
+              category={secondProject.category} 
+              isTall={false} 
+              imageSrc={secondProject.thumbnail}
+            />
+          </ScrollReveal>
+        )}
 
-        <ScrollReveal className="proj-square-2" delay={0.4}>
-          <ProjectCard 
-            id="edutracker"
-            title="eduTracker ERP" 
-            category="MANAGEMENT SYSTEM" 
-            isTall={false} 
-            imageSrc="/edutracker/main.png"
-          />
-        </ScrollReveal>
+        {/* Square Card 2 (3rd project) */}
+        {thirdProject && (
+          <ScrollReveal className="proj-square-2" delay={0.4}>
+            <ProjectCard 
+              id={thirdProject.id}
+              title={thirdProject.title} 
+              category={thirdProject.category} 
+              isTall={false} 
+              imageSrc={thirdProject.thumbnail}
+            />
+          </ScrollReveal>
+        )}
+
+        {/* Remaining projects (dynamic grid flow starting from Row 3) */}
+        {remainingProjects.map((project, index) => (
+          <ScrollReveal key={project.id} className="proj-square-auto" delay={0.1 * ((index % 3) + 1)}>
+            <ProjectCard 
+              id={project.id}
+              title={project.title} 
+              category={project.category} 
+              isTall={false} 
+              imageSrc={project.thumbnail}
+            />
+          </ScrollReveal>
+        ))}
 
       </div>
     </motion.div>
