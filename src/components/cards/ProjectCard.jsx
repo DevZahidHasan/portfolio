@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import IconButton from '../ui/IconButton';
 import './ProjectCard.css';
 
-function ProjectCard({ id, title, category, isTall, imageSrc }) {
+function ProjectCard({ id, title, category, isTall, imageSrc, liveLink }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
@@ -52,13 +52,30 @@ function ProjectCard({ id, title, category, isTall, imageSrc }) {
             <p className="text-sm" style={{ marginBottom: '0.25rem' }}>{category}</p>
             <h3 className="text-lg" style={{ fontSize: '1.5rem' }}>{title}</h3>
           </div>
-          {id ? (
-            <Link to={`/works/${id}`}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+            {liveLink && (
+              <a 
+                href={liveLink} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="live-link-btn"
+                onClick={(e) => e.stopPropagation()}
+              >
+                Live Link
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginLeft: '4px' }}>
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </a>
+            )}
+            {id ? (
+              <Link to={`/works/${id}`}>
+                <IconButton />
+              </Link>
+            ) : (
               <IconButton />
-            </Link>
-          ) : (
-            <IconButton />
-          )}
+            )}
+          </div>
         </div>
       </div>
 

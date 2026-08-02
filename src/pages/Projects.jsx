@@ -32,6 +32,7 @@ function Projects() {
               category={firstProject.category} 
               isTall={true} 
               imageSrc={firstProject.thumbnail}
+              liveLink={firstProject.liveLink}
             />
           </ScrollReveal>
         )}
@@ -58,6 +59,7 @@ function Projects() {
               category={secondProject.category} 
               isTall={false} 
               imageSrc={secondProject.thumbnail}
+              liveLink={secondProject.liveLink}
             />
           </ScrollReveal>
         )}
@@ -71,6 +73,7 @@ function Projects() {
               category={thirdProject.category} 
               isTall={false} 
               imageSrc={thirdProject.thumbnail}
+              liveLink={thirdProject.liveLink}
             />
           </ScrollReveal>
         )}
@@ -84,6 +87,7 @@ function Projects() {
               category={project.category} 
               isTall={false} 
               imageSrc={project.thumbnail}
+              liveLink={project.liveLink}
             />
           </ScrollReveal>
         ))}

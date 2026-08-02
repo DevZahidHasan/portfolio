@@ -75,3 +75,26 @@
   border-radius: 8px;
   box-shadow: 0 10px 40px rgba(0,0,0,0.5);
 }
+
+.live-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-accent);
+  border: 1px solid rgba(91, 120, 246, 0.25);
+  border-radius: 20px;
+  background-color: rgba(91, 120, 246, 0.05);
+  transition: all var(--transition-speed) ease;
+  white-space: nowrap;
+}
+
+.live-link-btn:hover {
+  background-color: var(--text-accent);
+  color: white;
+  border-color: var(--text-accent);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(91, 120, 246, 0.3);
+}
